@@ -3,101 +3,269 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Basic Web Page</title>
+  <title>Redcode Academy | Web & App Development Training</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset some default styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
+      background: radial-gradient(circle at top, #0f0f1a, #000);
+      color: #fff;
+      overflow-x: hidden;
     }
 
+    /* Header */
     header {
-      background: #0077ff;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      z-index: 10;
     }
 
-    nav {
-      background: #005fcc;
-      text-align: center;
-      padding: 0.75rem 0;
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .logo span {
+      color: #00ffe0;
     }
 
     nav a {
-      color: white;
+      color: #ccc;
       text-decoration: none;
       margin: 0 15px;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
-
     nav a:hover {
-      color: #ffdf00;
+      color: #00ffe0;
     }
 
-    section {
-      padding: 2rem 10%;
-    }
-
+    /* Hero Section */
     .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 3rem 0;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      padding: 0 30px;
     }
-
     .hero h1 {
-      color: #0077ff;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      line-height: 1.2;
     }
-
+    .hero span {
+      color: #00ffe0;
+      text-shadow: 0 0 15px #00ffe0;
+    }
     .hero p {
-      color: #555;
-      font-size: 1.1rem;
+      margin: 20px auto;
+      max-width: 600px;
+      color: #bbb;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: linear-gradient(90deg, #00ffe0, #0080ff);
+      color: #000;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.4s;
+    }
+    .btn:hover {
+      box-shadow: 0 0 20px #00ffe0;
+      transform: scale(1.05);
+    }
+    .btn.secondary {
+      background: transparent;
+      border: 2px solid #00ffe0;
+      color: #00ffe0;
+    }
+    .btn.secondary:hover {
+      background: #00ffe0;
+      color: #000;
     }
 
-    footer {
-      background: #333;
-      color: #ddd;
+    /* Glow Animation */
+    .glow-circle {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0,255,224,0.4), transparent);
+      border-radius: 50%;
+      top: 20%;
+      left: 10%;
+      animation: float 6s ease-in-out infinite;
+    }
+    .glow-circle.small {
+      width: 200px;
+      height: 200px;
+      top: 70%;
+      left: 70%;
+      animation-delay: 2s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.7; }
+      50% { transform: translateY(-20px); opacity: 1; }
+    }
+
+    /* Courses */
+    .courses {
+      padding: 100px 60px;
       text-align: center;
-      padding: 1rem;
-      margin-top: 30px;
+      background: #080812;
+    }
+    .courses h2 {
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+    }
+    .course-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .course-card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      width: 320px;
+      transition: 0.4s;
+    }
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0,255,224,0.3);
+    }
+    .course-card h3 {
+      color: #00ffe0;
+      margin-bottom: 15px;
+    }
+    .course-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* About */
+    .about {
+      padding: 100px 60px;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #00ffe0;
+    }
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #bbb;
+      line-height: 1.7;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 100px 60px;
+      text-align: center;
+      background: #0a0a14;
+    }
+    .contact h2 {
+      color: #00ffe0;
+      margin-bottom: 15px;
+    }
+    .contact-info p {
+      margin: 8px 0;
+      color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.03);
     }
   </style>
 </head>
 <body>
+
+  <!-- Header Section -->
   <header>
-    <h1>Welcome to My Website</h1>
-    <p>Learn | Build | Grow</p>
+    <div class="logo">Redcode <span>Academy</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="content">
+      <h1>Empowering Future <span>Developers</span></h1>
+      <p>Master <strong>Web Development</strong> & <strong>Mobile App Development</strong> with AI-powered modern curriculum.</p>
+      <a href="#courses" class="btn">Explore Courses</a>
+    </div>
+    <div class="glow-circle"></div>
+    <div class="glow-circle small"></div>
+  </section>
 
-  <section>
-    <div class="hero">
-      <h1>Hello, I'm Deepak!</h1>
-      <p>This is a simple web page created using HTML and CSS. You can customize it easily and add more sections.</p>
+  <!-- Courses Section -->
+  <section id="courses" class="courses">
+    <h2>Our Training Programs</h2>
+    <div class="course-container">
+      <div class="course-card">
+        <h3>Full Stack Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, React, Node.js, and more with real-world projects and placement support.</p>
+        <a href="#" class="btn secondary">Enroll Now</a>
+      </div>
+      <div class="course-card">
+        <h3>Mobile App Development</h3>
+        <p>Build Android & iOS apps using Flutter and Firebase. Learn UI/UX, APIs, and deployment strategies.</p>
+        <a href="#" class="btn secondary">Enroll Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Redcode Academy</h2>
+    <p>
+      Redcode Academy is an advanced IT training institute that helps students become job-ready developers.
+      Our AI-enhanced teaching methods make learning smarter, faster, and more practical. We offer both
+      online and offline classes with internship opportunities.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions? Let's connect!</p>
+    <div class="contact-info">
+      <p><strong>Email:</strong> info@redcodeacademy.com</p>
+      <p><strong>Phone:</strong> +91 9876543210</p>
+      <p><strong>Location:</strong> Bhubaneswar, Odisha</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 My Website | All rights reserved.</p>
+    <p>© 2025 Redcode Academy. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
