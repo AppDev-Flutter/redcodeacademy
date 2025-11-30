@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redcode Academy | Web & App Development Training</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -31,10 +31,11 @@
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(12px);
       z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 700;
     }
     .logo span {
@@ -63,8 +64,9 @@
       padding: 0 30px;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       line-height: 1.2;
+      font-weight: 800;
     }
     .hero span {
       color: #00ffe0;
@@ -72,7 +74,7 @@
     }
     .hero p {
       margin: 20px auto;
-      max-width: 600px;
+      max-width: 700px;
       color: #bbb;
     }
     .btn {
@@ -123,15 +125,51 @@
       50% { transform: translateY(-20px); opacity: 1; }
     }
 
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 2.7rem;
+      margin-bottom: 40px;
+      color: #00ffe0;
+      font-weight: 700;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 100px 60px;
+      background: #0c0c18;
+    }
+    .features-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .feature-card {
+      width: 300px;
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0,255,224,0.2);
+    }
+    .feature-card h3 {
+      margin-bottom: 15px;
+      color: #00ffe0;
+    }
+    .feature-card p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
     /* Courses */
     .courses {
       padding: 100px 60px;
-      text-align: center;
       background: #080812;
-    }
-    .courses h2 {
-      font-size: 2.4rem;
-      margin-bottom: 40px;
     }
     .course-container {
       display: flex;
@@ -143,8 +181,9 @@
       background: rgba(255,255,255,0.05);
       padding: 30px;
       border-radius: 20px;
-      width: 320px;
+      width: 330px;
       transition: 0.4s;
+      border: 1px solid rgba(255,255,255,0.08);
     }
     .course-card:hover {
       transform: translateY(-10px);
@@ -156,7 +195,6 @@
     }
     .course-card p {
       color: #ccc;
-      font-size: 0.95rem;
       margin-bottom: 20px;
     }
 
@@ -165,27 +203,92 @@
       padding: 100px 60px;
       text-align: center;
     }
-    .about h2 {
-      font-size: 2.4rem;
-      margin-bottom: 30px;
+    .about p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #ccc;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* Stats */
+    .stats {
+      padding: 100px 60px;
+      background: #06060e;
+      text-align: center;
+    }
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      font-size: 2.2rem;
+      font-weight: 700;
       color: #00ffe0;
     }
-    .about p {
-      max-width: 800px;
-      margin: 0 auto;
+    .stat small {
+      display: block;
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 60px;
+      background: #0c0c16;
+    }
+    .testimonial-box {
+      width: 340px;
+      background: rgba(255,255,255,0.04);
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .testimonial-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .testimonial-box p {
       color: #bbb;
-      line-height: 1.7;
+      font-style: italic;
+    }
+    .testimonial-box h4 {
+      margin-top: 15px;
+      color: #00ffe0;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 100px 60px;
+      background: #070710;
+    }
+    .faq-item {
+      max-width: 900px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 15px;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .faq-item h3 {
+      color: #00ffe0;
+    }
+    .faq-item p {
+      margin-top: 10px;
+      display: none;
+      color: #ccc;
     }
 
     /* Contact */
     .contact {
       padding: 100px 60px;
-      text-align: center;
       background: #0a0a14;
-    }
-    .contact h2 {
-      color: #00ffe0;
-      margin-bottom: 15px;
+      text-align: center;
     }
     .contact-info p {
       margin: 8px 0;
@@ -199,8 +302,22 @@
       font-size: 0.9rem;
       background: rgba(255,255,255,0.03);
     }
+    @media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
   </style>
+
+  <script>
+    function toggleFAQ(el) {
+      const p = el.querySelector("p");
+      p.style.display = p.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </head>
+
 <body>
 
   <!-- Header Section -->
@@ -208,6 +325,7 @@
     <div class="logo">Redcode <span>Academy</span></div>
     <nav>
       <a href="#home">Home</a>
+      <a href="#features">Features</a>
       <a href="#courses">Courses</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -217,50 +335,192 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="content">
-      <h1>Empowering Future <span>Developers</span></h1>
-      <p>Master <strong>Web Development</strong> & <strong>Mobile App Development</strong> with AI-powered modern curriculum.</p>
+      <h1>Become a Professional <span>Web & App Developer</span></h1>
+      <p>India’s most advanced training institute for Web Development, Flutter App Development, and AI-powered software training with internship + 100% job assistance.</p>
       <a href="#courses" class="btn">Explore Courses</a>
     </div>
     <div class="glow-circle"></div>
     <div class="glow-circle small"></div>
   </section>
 
-  <!-- Courses Section -->
-  <section id="courses" class="courses">
-    <h2>Our Training Programs</h2>
-    <div class="course-container">
-      <div class="course-card">
-        <h3>Full Stack Web Development</h3>
-        <p>Learn HTML, CSS, JavaScript, React, Node.js, and more with real-world projects and placement support.</p>
-        <a href="#" class="btn secondary">Enroll Now</a>
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2 class="section-title">Why Choose Redcode Academy?</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <h3>✔ Industry-Level Training</h3>
+        <p>Our modules are designed exactly like IT companies work—ensuring you become job-ready from day one.</p>
       </div>
-      <div class="course-card">
-        <h3>Mobile App Development</h3>
-        <p>Build Android & iOS apps using Flutter and Firebase. Learn UI/UX, APIs, and deployment strategies.</p>
-        <a href="#" class="btn secondary">Enroll Now</a>
+
+      <div class="feature-card">
+        <h3>✔ Live Projects & Internship</h3>
+        <p>Work on real-world websites & apps used by real clients. Build a portfolio that gets you hired.</p>
       </div>
+
+      <div class="feature-card">
+        <h3>✔ 100% Job Assistance</h3>
+        <p>Resume building, interview preparation, mock interviews, job alerts, and placement support.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>✔ AI-Powered Learning</h3>
+        <p>Learn how to integrate ChatGPT, AI tools, and automation into development workflows.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>✔ Beginner-Friendly</h3>
+        <p>No coding background required. We start from zero and take you to an advanced level step-by-step.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>✔ Offline + Online Classes</h3>
+        <p>Attend classes from Bhubaneswar or join live interactive online sessions.</p>
+      </div>
+
     </div>
   </section>
 
+  <!-- Courses Section -->
+ <section id="courses" class="courses">
+  <h2 class="section-title">Our Training Programs</h2>
+  <div class="course-container">
+
+    <!-- Beginner Full Stack Web Development -->
+    <div class="course-card">
+      <h3>Beginner Full Stack Web Development</h3>
+      <p><strong>Frontend:</strong> HTML, CSS, Bootstrap, JavaScript<br>
+      <strong>Backend:</strong> PHP, MySQL, Ajax<br>
+      Starting from zero → Complete full stack development for beginners.</p>
+      <a href="#" class="btn secondary">View Details</a>
+    </div>
+
+    <!-- Advanced Full Stack Web Development -->
+    <div class="course-card">
+      <h3>Advanced Full Stack Web Development</h3>
+      <p><strong>MERN Stack Training:</strong><br>
+      React.js, Node.js, Express.js, MongoDB<br>
+      Industry-level projects, APIs, deployment & production setup.</p>
+      <a href="#" class="btn secondary">View Details</a>
+    </div>
+
+    <!-- Mobile App Development -->
+    <div class="course-card">
+      <h3>Mobile App Development (Flutter)</h3>
+      <p>Flutter, Dart, Firebase, REST API, Payment Integration, UI/UX, State Management, Publishing Apps.</p>
+      <a href="#" class="btn secondary">View Details</a>
+    </div>
+
+    <!-- Python -->
+    <div class="course-card">
+      <h3>Python & AI Automation</h3>
+      <p>Python basics → Machine Learning fundamentals → AI Tools → Automation → Real-world projects.</p>
+      <a href="#" class="btn secondary">View Details</a>
+    </div>
+
+  </div>
+</section>
+
+
   <!-- About Section -->
   <section id="about" class="about">
-    <h2>About Redcode Academy</h2>
+    <h2 class="section-title">About Redcode Academy</h2>
     <p>
-      Redcode Academy is an advanced IT training institute that helps students become job-ready developers.
-      Our AI-enhanced teaching methods make learning smarter, faster, and more practical. We offer both
-      online and offline classes with internship opportunities.
+      Redcode Academy is a leading IT training institute focused on creating highly skilled developers.  
+      With a mission to bridge the gap between education and industry demand, we provide practical, real-world training that prepares students for high-paying jobs and freelance careers.  
+      <br><br>
+      Our curriculum is updated regularly based on industry trends, and every student receives personalized mentorship, live project experience, and career guidance.
     </p>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-grid">
+
+      <div>
+        <div class="stat">2000+</div>
+        <small>Students Trained</small>
+      </div>
+
+      <div>
+        <div class="stat">300+</div>
+        <small>Live Projects Completed</small>
+      </div>
+
+      <div>
+        <div class="stat">50+</div>
+        <small>Hiring Partners</small>
+      </div>
+
+      <div>
+        <div class="stat">95%</div>
+        <small>Placement Success</small>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2 class="section-title">What Our Students Say</h2>
+    <div class="testimonial-grid">
+
+      <div class="testimonial-box">
+        <p>“Redcode Academy changed my life. I got my first developer job within 3 months of completing the course.”</p>
+        <h4>— Rahul Sharma</h4>
+      </div>
+
+      <div class="testimonial-box">
+        <p>“Their Flutter training is industry-level. I built 5 full apps and cracked my first interview easily.”</p>
+        <h4>— Priya Verma</h4>
+      </div>
+
+      <div class="testimonial-box">
+        <p>“Best institute in Bhubaneswar! Friendly mentors, real projects, and guaranteed interview support.”</p>
+        <h4>— Akash Singh</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <h3>Do I need prior coding experience?</h3>
+      <p>No! All courses start from ZERO level. Anyone can join and learn.</p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <h3>Do you provide certificates?</h3>
+      <p>Yes, Redcode Academy offers ISO-certified completion certificates + internship certificates.</p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <h3>Is job support guaranteed?</h3>
+      <p>We offer 100% job assistance with resume building, interview prep, and placement drives.</p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <h3>Are classes online or offline?</h3>
+      <p>Both options are available—Online Live + Offline Classroom.</p>
+    </div>
+
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions? Let's connect!</p>
+    <h2 class="section-title">Contact Us</h2>
+    <p>Have questions? We’re here to help you start your career.</p>
+
     <div class="contact-info">
       <p><strong>Email:</strong> info@redcodeacademy.com</p>
       <p><strong>Phone:</strong> +91 9876543210</p>
       <p><strong>Location:</strong> Bhubaneswar, Odisha</p>
     </div>
+
+    <a href="#courses" class="btn" style="margin-top: 25px;">Join Redcode Academy</a>
   </section>
 
   <footer>
