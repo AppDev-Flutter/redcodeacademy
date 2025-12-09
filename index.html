@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redcode Academy | Web & App Development Training</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -14,8 +15,8 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #0f0f1a, #000);
-      color: #fff;
+      background:#f4f7ff;
+      color: #222;
       overflow-x: hidden;
     }
 
@@ -28,29 +29,30 @@
       position: fixed;
       width: 100%;
       top: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background:#ffffffee;
       backdrop-filter: blur(12px);
       z-index: 10;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #d9d9d9;
     }
 
     .logo {
       font-size: 1.7rem;
       font-weight: 700;
+      color:#0d47a1;
     }
     .logo span {
-      color: #00ffe0;
+      color:#2196f3;
     }
 
     nav a {
-      color: #ccc;
+      color: #333;
       text-decoration: none;
       margin: 0 15px;
       font-weight: 500;
       transition: 0.3s;
     }
     nav a:hover {
-      color: #00ffe0;
+      color:#2196f3;
     }
 
     /* Hero Section */
@@ -62,82 +64,61 @@
       text-align: center;
       position: relative;
       padding: 0 30px;
+      background: linear-gradient(135deg,#e3f2fd,#ffffff);
     }
     .hero h1 {
       font-size: 3.5rem;
       line-height: 1.2;
       font-weight: 800;
+      color:#0d47a1;
     }
     .hero span {
-      color: #00ffe0;
-      text-shadow: 0 0 15px #00ffe0;
+      color:#2196f3;
     }
     .hero p {
       margin: 20px auto;
       max-width: 700px;
-      color: #bbb;
+      color:#444;
     }
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
-      background: linear-gradient(90deg, #00ffe0, #0080ff);
-      color: #000;
+      background:#2196f3;
+      color:#fff;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.4s;
     }
     .btn:hover {
-      box-shadow: 0 0 20px #00ffe0;
-      transform: scale(1.05);
+      background:#0d47a1;
     }
     .btn.secondary {
       background: transparent;
-      border: 2px solid #00ffe0;
-      color: #00ffe0;
+      border: 2px solid #2196f3;
+      color:#2196f3;
     }
     .btn.secondary:hover {
-      background: #00ffe0;
-      color: #000;
+      background:#2196f3;
+      color:#fff;
     }
 
-    /* Glow Animation */
-    .glow-circle {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(0,255,224,0.4), transparent);
-      border-radius: 50%;
-      top: 20%;
-      left: 10%;
-      animation: float 6s ease-in-out infinite;
-    }
-    .glow-circle.small {
-      width: 200px;
-      height: 200px;
-      top: 70%;
-      left: 70%;
-      animation-delay: 2s;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); opacity: 0.7; }
-      50% { transform: translateY(-20px); opacity: 1; }
-    }
+    /* Glow circles removed for light theme */
 
     /* Section Title */
     .section-title {
       text-align: center;
       font-size: 2.7rem;
       margin-bottom: 40px;
-      color: #00ffe0;
+      color:#0d47a1;
       font-weight: 700;
     }
 
     /* Features Section */
     .features {
       padding: 100px 60px;
-      background: #0c0c18;
+      background:#ffffff;
     }
     .features-grid {
       display: flex;
@@ -147,29 +128,29 @@
     }
     .feature-card {
       width: 300px;
-      background: rgba(255,255,255,0.05);
+      background:#ffffff;
       padding: 30px;
       border-radius: 20px;
       transition: 0.3s;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid #e0e0e0;
     }
     .feature-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(0,255,224,0.2);
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
     }
     .feature-card h3 {
       margin-bottom: 15px;
-      color: #00ffe0;
+      color:#0d47a1;
     }
     .feature-card p {
-      color: #bbb;
+      color:#555;
       line-height: 1.6;
     }
 
     /* Courses */
     .courses {
       padding: 100px 60px;
-      background: #080812;
+      background:#f5f9ff;
     }
     .course-container {
       display: flex;
@@ -178,23 +159,23 @@
       gap: 40px;
     }
     .course-card {
-      background: rgba(255,255,255,0.05);
+      background:#ffffff;
       padding: 30px;
       border-radius: 20px;
       width: 330px;
       transition: 0.4s;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid #dcdcdc;
     }
     .course-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 0 25px rgba(0,255,224,0.3);
+      box-shadow: 0 0 25px rgba(0,0,0,0.12);
     }
     .course-card h3 {
-      color: #00ffe0;
+      color:#0d47a1;
       margin-bottom: 15px;
     }
     .course-card p {
-      color: #ccc;
+      color:#333;
       margin-bottom: 20px;
     }
 
@@ -202,11 +183,12 @@
     .about {
       padding: 100px 60px;
       text-align: center;
+      background:#ffffff;
     }
     .about p {
       max-width: 900px;
       margin: 0 auto;
-      color: #ccc;
+      color:#444;
       line-height: 1.7;
       font-size: 1rem;
     }
@@ -214,7 +196,7 @@
     /* Stats */
     .stats {
       padding: 100px 60px;
-      background: #06060e;
+      background:#e9f2ff;
       text-align: center;
     }
     .stats-grid {
@@ -226,25 +208,25 @@
     .stat {
       font-size: 2.2rem;
       font-weight: 700;
-      color: #00ffe0;
+      color:#0d47a1;
     }
     .stat small {
       display: block;
-      color: #aaa;
+      color:#555;
       font-size: 1rem;
     }
 
     /* Testimonials */
     .testimonials {
       padding: 100px 60px;
-      background: #0c0c16;
+      background:#ffffff;
     }
     .testimonial-box {
       width: 340px;
-      background: rgba(255,255,255,0.04);
+      background:#f7f9ff;
       padding: 25px;
       border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid #e0e0e0;
     }
     .testimonial-grid {
       display: flex;
@@ -253,46 +235,59 @@
       flex-wrap: wrap;
     }
     .testimonial-box p {
-      color: #bbb;
+      color:#444;
       font-style: italic;
     }
     .testimonial-box h4 {
       margin-top: 15px;
-      color: #00ffe0;
+      color:#0d47a1;
     }
 
     /* FAQ */
     .faq {
       padding: 100px 60px;
-      background: #070710;
+      background:#f5f9ff;
     }
     .faq-item {
       max-width: 900px;
       margin: 20px auto;
-      background: rgba(255,255,255,0.05);
+      background:#ffffff;
       padding: 20px;
       border-radius: 15px;
       cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid #dcdcdc;
     }
     .faq-item h3 {
-      color: #00ffe0;
+      color:#0d47a1;
     }
     .faq-item p {
       margin-top: 10px;
       display: none;
-      color: #ccc;
+      color:#555;
     }
 
     /* Contact */
     .contact {
       padding: 100px 60px;
-      background: #0a0a14;
+      background:#ffffff;
       text-align: center;
     }
     .contact-info p {
       margin: 8px 0;
-      color: #ccc;
+      color:#444;
+    }
+
+    /* Visitors Center Box */
+    .visitor-section {
+      padding: 40px 20px;
+      background:#e3f2fd;
+      text-align:center;
+      border-top:3px solid #2196f3;
+    }
+    .visitor-section h2 {
+      font-size:2rem;
+      color:#0d47a1;
+      font-weight:700;
     }
 
     /* Footer */
@@ -300,14 +295,13 @@
       text-align: center;
       padding: 25px;
       font-size: 0.9rem;
-      background: rgba(255,255,255,0.03);
+      background:#0d47a1;
+      color: #fff;
     }
-    @media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-}
 
+    @media (max-width: 768px) {
+      nav { display: none; }
+    }
   </style>
 
   <script>
@@ -315,12 +309,25 @@
       const p = el.querySelector("p");
       p.style.display = p.style.display === "block" ? "none" : "block";
     }
+
+    // Visitor Counter
+    let base = 1000;
+    let visits = localStorage.getItem("visits");
+
+    if(visits === null){ visits = 1; }
+    else { visits = parseInt(visits) + 1; }
+
+    localStorage.setItem("visits", visits);
+
+    window.onload = () => {
+      document.getElementById("visitorCount").innerText = base + visits;
+    };
   </script>
 </head>
 
 <body>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <header>
     <div class="logo">Redcode <span>Academy</span></div>
     <nav>
@@ -332,18 +339,16 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="content">
       <h1>Become a Professional <span>Web & App Developer</span></h1>
       <p>India’s most advanced training institute for Web Development, Flutter App Development, and AI-powered software training with internship + 100% job assistance.</p>
       <a href="#courses" class="btn">Explore Courses</a>
     </div>
-    <div class="glow-circle"></div>
-    <div class="glow-circle small"></div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Features -->
   <section id="features" class="features">
     <h2 class="section-title">Why Choose Redcode Academy?</h2>
     <div class="features-grid">
@@ -381,48 +386,43 @@
     </div>
   </section>
 
-  <!-- Courses Section -->
- <section id="courses" class="courses">
-  <h2 class="section-title">Our Training Programs</h2>
-  <div class="course-container">
+  <!-- Courses -->
+  <section id="courses" class="courses">
+    <h2 class="section-title">Our Training Programs</h2>
+    <div class="course-container">
 
-    <!-- Beginner Full Stack Web Development -->
-    <div class="course-card">
-      <h3>Beginner Full Stack Web Development</h3>
-      <p><strong>Frontend:</strong> HTML, CSS, Bootstrap, JavaScript<br>
-      <strong>Backend:</strong> PHP, MySQL, Ajax<br>
-      Starting from zero → Complete full stack development for beginners.</p>
-      <a href="#" class="btn secondary">View Details</a>
+      <div class="course-card">
+        <h3>Beginner Full Stack Web Development</h3>
+        <p><strong>Frontend:</strong> HTML, CSS, Bootstrap, JavaScript<br>
+        <strong>Backend:</strong> PHP, MySQL, Ajax<br>
+        Starting from zero → Complete full stack development for beginners.</p>
+        <a href="#" class="btn secondary">View Details</a>
+      </div>
+
+      <div class="course-card">
+        <h3>Advanced Full Stack Web Development</h3>
+        <p><strong>MERN Stack Training:</strong><br>
+        React.js, Node.js, Express.js, MongoDB<br>
+        Industry-level projects, APIs, deployment & production setup.</p>
+        <a href="#" class="btn secondary">View Details</a>
+      </div>
+
+      <div class="course-card">
+        <h3>Mobile App Development (Flutter)</h3>
+        <p>Flutter, Dart, Firebase, REST API, Payment Integration, UI/UX, State Management, Publishing Apps.</p>
+        <a href="#" class="btn secondary">View Details</a>
+      </div>
+
+      <div class="course-card">
+        <h3>Python & AI Automation</h3>
+        <p>Python basics → Machine Learning fundamentals → AI Tools → Automation → Real-world projects.</p>
+        <a href="#" class="btn secondary">View Details</a>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Advanced Full Stack Web Development -->
-    <div class="course-card">
-      <h3>Advanced Full Stack Web Development</h3>
-      <p><strong>MERN Stack Training:</strong><br>
-      React.js, Node.js, Express.js, MongoDB<br>
-      Industry-level projects, APIs, deployment & production setup.</p>
-      <a href="#" class="btn secondary">View Details</a>
-    </div>
-
-    <!-- Mobile App Development -->
-    <div class="course-card">
-      <h3>Mobile App Development (Flutter)</h3>
-      <p>Flutter, Dart, Firebase, REST API, Payment Integration, UI/UX, State Management, Publishing Apps.</p>
-      <a href="#" class="btn secondary">View Details</a>
-    </div>
-
-    <!-- Python -->
-    <div class="course-card">
-      <h3>Python & AI Automation</h3>
-      <p>Python basics → Machine Learning fundamentals → AI Tools → Automation → Real-world projects.</p>
-      <a href="#" class="btn secondary">View Details</a>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="about">
     <h2 class="section-title">About Redcode Academy</h2>
     <p>
@@ -433,7 +433,7 @@
     </p>
   </section>
 
-  <!-- Stats Section -->
+  <!-- Stats -->
   <section class="stats">
     <div class="stats-grid">
 
@@ -509,7 +509,7 @@
 
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2 class="section-title">Contact Us</h2>
     <p>Have questions? We’re here to help you start your career.</p>
@@ -523,6 +523,12 @@
     <a href="#courses" class="btn" style="margin-top: 25px;">Join Redcode Academy</a>
   </section>
 
+  <!-- VISITOR COUNTER IN CENTER -->
+  <section class="visitor-section">
+    <h2>Total Visitors: <span id="visitorCount">Loading...</span></h2>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 Redcode Academy. All Rights Reserved.</p>
   </footer>
