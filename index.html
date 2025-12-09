@@ -304,25 +304,27 @@
     }
   </style>
 
-  <script>
-    function toggleFAQ(el) {
-      const p = el.querySelector("p");
-      p.style.display = p.style.display === "block" ? "none" : "block";
-    }
+<script>
+  let base = 1000;
 
-    // Visitor Counter
-    let base = 1000;
-    let visits = localStorage.getItem("visits");
+  // Check if user already counted
+  let alreadyVisited = localStorage.getItem("redcode_visitor");
 
-    if(visits === null){ visits = 1; }
-    else { visits = parseInt(visits) + 1; }
+  if (!alreadyVisited) {
+    // First time on this device
+    let currentCount = localStorage.getItem("visitorCountReal") || base;
+    currentCount = parseInt(currentCount) + 1;
 
-    localStorage.setItem("visits", visits);
+    localStorage.setItem("visitorCountReal", currentCount);
+    localStorage.setItem("redcode_visitor", "yes");
+  }
 
-    window.onload = () => {
-      document.getElementById("visitorCount").innerText = base + visits;
-    };
-  </script>
+  window.onload = () => {
+    let count = localStorage.getItem("visitorCountReal") || base;
+    document.getElementById("visitorCount").innerText = count;
+  };
+</script>
+
 </head>
 
 <body>
