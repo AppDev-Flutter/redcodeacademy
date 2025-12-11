@@ -285,7 +285,7 @@ footer {
 <script>
 // GLOBAL VISITOR COUNTER (SERVER BASED)
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("visitor_count.php")
+  fetch("/api/visitor_count")
     .then(res => res.text())
     .then(data => {
       document.getElementById("visitorCount").innerText = data;
