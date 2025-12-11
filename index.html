@@ -47,7 +47,7 @@ nav a {
 }
 nav a:hover { color:#2196f3; }
 
-/* HERO (Improved) */
+/* HERO */
 .hero {
   min-height: 100vh;
   padding: 140px 60px 80px;
@@ -57,9 +57,7 @@ nav a:hover { color:#2196f3; }
   background: linear-gradient(135deg,#e3f2fd,#ffffff);
   gap: 40px;
 }
-.hero-text {
-  flex: 1;
-}
+
 .hero-text h1 {
   font-size: 3.8rem;
   font-weight: 800;
@@ -154,7 +152,7 @@ nav a:hover { color:#2196f3; }
 }
 .feature-card h3 { color:#0d47a1; margin-bottom:10px; }
 
-/* NEW: Mission Section */
+/* Mission */
 .mission {
   padding:100px 60px;
   background:#f0f6ff;
@@ -235,34 +233,63 @@ footer {
   color:#fff;
 }
 
-/* Responsive */
-@media(max-width:900px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-  .hero-img img { width:80%; }
+/* RESPONSIVE */
+@media(max-width:1024px) {
+  header { padding: 20px 30px; }
+  .hero { padding: 130px 30px 60px; }
 }
-@media(max-width:768px){
-  nav{ display:none; }
-  header{ padding:20px 20px; }
+
+@media(max-width:768px) {
+  nav { display: none; }
+  header { padding: 15px 20px; }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 20px 50px;
+  }
+  .hero-text h1 { font-size: 2.2rem; }
+  .hero-text p { font-size: 1rem; }
+
+  .hero-img img { width: 70%; }
+
+  .feature-card,
+  .course-card,
+  .testimonial-box {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .section-title { font-size: 2rem; }
+}
+
+@media(max-width:480px) {
+  header { padding: 12px 15px; }
+  .logo { font-size: 1.4rem; }
+
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-img img { width: 85%; }
+
+  .hero-buttons a {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
+  .mission, .courses, .features, .faq, .testimonials {
+    padding: 60px 20px !important;
+  }
 }
 </style>
 
 <script>
-// Visitor Counter FIXED (no "Loading...")
-let base = 1000;
-let visits = localStorage.getItem("visits");
-
-if (!visits) {
-  visits = 1;
-} else {
-  visits = parseInt(visits) + 1;
-}
-localStorage.setItem("visits", visits);
-
+// GLOBAL VISITOR COUNTER (SERVER BASED)
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("visitorCount").innerText = base + visits;
+  fetch("visitor_count.php")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("visitorCount").innerText = data;
+    });
 });
 
 // FAQ Toggle
@@ -286,7 +313,7 @@ function toggleFAQ(el){
   </nav>
 </header>
 
-<!-- HERO IMPROVED -->
+<!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-text">
     <h1>
@@ -330,7 +357,7 @@ function toggleFAQ(el){
   </div>
 </section>
 
-<!-- Mission Section -->
+<!-- MISSION -->
 <section class="mission">
   <h2 class="section-title">Our Mission & Vision</h2>
   <p>
@@ -386,13 +413,11 @@ function toggleFAQ(el){
 </section>
 
 <!-- TESTIMONIALS -->
-<!-- TESTIMONIALS -->
-<section class="testimonials" style="padding:100px 60px; background:#fff;">
+<section class="testimonials">
   <h2 class="section-title">What Our Students Say</h2>
 
   <div style="display:flex; justify-content:center; align-items:flex-start; gap:50px; flex-wrap:wrap;">
 
-    <!-- LEFT SIDE: Reviews -->
     <div class="testimonial-grid" style="max-width:750px;">
       <div class="testimonial-box">
         <p>“Redcode Academy changed my life. I got my first developer job within 3 months.”</p>
@@ -410,7 +435,6 @@ function toggleFAQ(el){
       </div>
     </div>
 
-    <!-- RIGHT SIDE: Stats Box -->
     <div style="
       width:320px; 
       background:#f0f6ff; 
@@ -447,7 +471,6 @@ function toggleFAQ(el){
   </div>
 </section>
 
-
 <!-- FAQ -->
 <section class="faq">
   <h2 class="section-title">Frequently Asked Questions</h2>
@@ -482,7 +505,7 @@ function toggleFAQ(el){
   <a href="#courses" class="btn" style="margin-top:25px;">Join Redcode Academy</a>
 </section>
 
-<!-- Visitor Counter FIXED -->
+<!-- Visitor Counter -->
 <section class="visitor-section">
   <h2>Total Visitors: <span id="visitorCount"></span></h2>
 </section>
