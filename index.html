@@ -283,16 +283,7 @@ footer {
 </style>
 
 <script>
-// GLOBAL VISITOR COUNTER (SERVER BASED)
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/visitor_count")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("visitorCount").innerText = data;
-    });
-});
-
-// FAQ Toggle
+// FAQ Toggle Only (counter removed completely)
 function toggleFAQ(el){
   const p = el.querySelector("p");
   p.style.display = p.style.display === "block" ? "none" : "block";
@@ -505,31 +496,10 @@ function toggleFAQ(el){
   <a href="#courses" class="btn" style="margin-top:25px;">Join Redcode Academy</a>
 </section>
 
-<!-- Visitor Counter -->
-<section class="visitor-section">
-  <h2>Total Visitors: <span id="visitorCount"></span></h2>
-</section>
 
 <footer>
   <p>© 2025 Redcode Academy. All Rights Reserved.</p>
 </footer>
-
-  <script>
-// LOCAL VISITOR COUNTER (works on Vercel)
-document.addEventListener("DOMContentLoaded", () => {
-  let count = localStorage.getItem("visitor_count");
-
-  if (!count) {
-    count = 1; // First time visit
-  } else {
-    count = parseInt(count) + 1;
-  }
-
-  localStorage.setItem("visitor_count", count);
-
-  document.getElementById("visitorCount").innerText = count;
-});
-</script>
 
 </body>
 </html>
